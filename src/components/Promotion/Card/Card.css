@@ -5,6 +5,7 @@
   padding: 15px;
   border: 1px solid #c3c3c3;
   box-shadow: 0 2px 7px 0 rgba(0, 0, 0, 0.15);
+  margin-bottom: 20px;
 }
 
 .prom-card__img {
@@ -37,6 +38,7 @@
 }
 
 .prom-card__footer {
+  width: 100%;
   display: flex;
   align-items: center;
 }
