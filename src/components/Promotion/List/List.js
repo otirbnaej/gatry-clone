@@ -11,7 +11,7 @@ const PromotionList = ({ loading, proms }) => {
   return (
     <div className="prom-list">
       {proms.map((prom) => (
-        <PromotionCard prom={prom} />
+        <PromotionCard key={prom.id} prom={prom} />
       ))}
     </div>
   );
