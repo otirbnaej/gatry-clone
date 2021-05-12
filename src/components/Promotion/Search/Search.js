@@ -1,13 +1,15 @@
 /* eslint-disable no-unused-vars */
-import React, { useEffect, useState } from 'react';
+import React, { useEffect, useState, useRef } from 'react';
 import { Link } from 'react-router-dom';
 import useApi from 'components/Utils/useApi';
 import PromotionList from 'components/Promotion/List/List';
 import './Search.css';
 
 const PromotionSearch = () => {
+  const mountRef = useRef(null);
   const [search, setSearch] = useState('');
   const [load, loadInfo] = useApi({
+    debounceDelay: 300,
     url: '/promotions',
     methos: 'get',
     params: {
@@ -19,7 +21,11 @@ const PromotionSearch = () => {
   });
 
   useEffect(() => {
-    load();
+    load({
+      debounced: mountRef.current,
+    });
+
+    if (!mountRef.current) mountRef.current = true;
   }, [search]);
 
   return (
