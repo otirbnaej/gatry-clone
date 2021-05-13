@@ -23,12 +23,20 @@
 .prom-card__last-comment {
   color: #95a5a6;
   font-weight: 700;
+  max-width: 288px;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  overflow: hidden;
 }
 
 .prom-card__comments-count {
   color: #3498db;
   margin-left: auto;
   margin-right: 22px;
+  background-color: unset;
+  border: unset;
+  outline: none;
+  white-space: nowrap;
 }
 
 .prom-card__price {
@@ -50,4 +58,19 @@
   text-decoration: none;
   padding: 8px 10px;
   text-transform: uppercase;
+  white-space: nowrap;
+}
+
+.prom-card__info {
+  flex-grow: 1;
+}
+
+.prom-card__edit-button {
+  border: 1px solid #3498db;
+  border-radius: 4px;
+  color: #3498db;
+  text-decoration: none;
+  padding: 8px 10px;
+  text-transform: uppercase;
+  margin-left: 10px;
 }
